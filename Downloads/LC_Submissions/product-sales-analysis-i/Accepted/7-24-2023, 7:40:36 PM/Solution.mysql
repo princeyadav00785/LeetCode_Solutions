@@ -1,0 +1,7 @@
+// https://leetcode.com/problems/product-sales-analysis-i
+
+# Write your MySQL query statement below
+SELECT p.product_name , S.year , S.price
+from Sales as S
+LEFT JOIN Product as P
+using(product_id)
