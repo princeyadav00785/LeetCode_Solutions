@@ -1,0 +1,19 @@
+// https://leetcode.com/problems/stone-game-vi
+
+class Solution {
+public:
+    int stoneGameVI(vector<int>& A, vector<int>& B) {
+  vector<vector<int>> sums;
+        int n=A.size();
+        for(int i=0;i<n;i++) {
+            sums.push_back({A[i]+B[i], A[i], B[i]});
+        }
+        sort(sums.begin(),sums.end());
+        vector<int> res(2,0);
+        for(int i=0;i<n;i++) {
+            res[i%2]+=sums[n-1-i][i%2+1];
+        }
+        return res[0]==res[1] ? 0 : (res[0]>res[1]? 1 : -1);
+        
+    }
+};
