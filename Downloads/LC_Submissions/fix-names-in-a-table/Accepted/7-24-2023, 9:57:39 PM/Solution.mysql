@@ -1,0 +1,16 @@
+// https://leetcode.com/problems/fix-names-in-a-table
+
+# Write your MySQL query statement below
+
+SELECT user_id , 
+CONCAT(UPPER(SUBSTR(name ,1,1)),LOWER(SUBSTR(name ,2 ,(length(name)))))
+as name 
+from Users 
+ORDER BY user_id
+
+
+# select u.user_id, 
+# concat(upper(substr(name,1,1)),lower(substr(name,2))) 
+# as name 
+# from users u 
+# order by u.user_id;
