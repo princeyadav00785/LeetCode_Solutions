@@ -1,0 +1,22 @@
+// https://leetcode.com/problems/find-resultant-array-after-removing-anagrams
+
+class Solution {
+public:
+    vector<string> removeAnagrams(vector<string>& s) {
+     set<string> a;
+          vector<string>ans;
+        // ["abba","baba","bbaa","cd","cd"]
+        for(int i=0;i<s.size();i++){
+            string t= s[i];
+            sort(t.begin(),t.end());
+            int l=a.size();
+            
+            a.insert(t);
+            if(l<a.size()){
+                ans.push_back(s[i]);
+            }
+        }
+      
+        return ans;
+    }
+};
